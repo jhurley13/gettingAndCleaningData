@@ -123,11 +123,14 @@ $(document).ready(function () {
 <h1>Codebook: Final project for Getting and Cleaning Data</h1>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>This document describes the data fields in</p>
+<p>This document describes the data fields in the experiment data from the “Human Activity Recognition Using Smartphones Data Set” study. This includes original features from the study, along with new features created as part of the analysis done for the course project.</p>
 </div>
 <div id="additional-data-fields-for-the-course-project" class="section level2">
 <h2>Additional data fields for the Course project</h2>
-<p>TBD</p>
+<p>There are 68 features in the tidy_data set produced by the “run_analysis.R” script. As per instructions for this project, only features with “mean()” or “std()” in the name were used for the aggregate data set.</p>
+<p>subject - This is the subject number of the participant in the study, and is a numeric value from 1 to 30<br />
+activity - The values in the y_train and y_test are numeric values from 1 to 6, indicating an activity code. The “activity” feature is a text representation of these values, based on the mapping in activity_labels.txt. For example 1 is converted to “WALKING” in the “activity” feature</p>
+<p>The remaining features are the average (i.e. mean) of the corresponding original feature for a given participant and activity. The names are derived from the original names by replacing “mean()” (respectively “std()”) with “MEAN” (respectively “STD”) and appending “-mean”. For example, if the feature in the original data set was “tBodyAcc-mean()-X”, the feature in this aggregate set is “tBodyAcc-MEAN-X-mean”.</p>
 </div>
 <div id="original-codebook" class="section level2">
 <h2>Original Codebook</h2>
@@ -143,7 +146,7 @@ $(document).ready(function () {
 </div>
 <div id="feature-info" class="section level2">
 <h2>Feature Info</h2>
-<p>The information in this section is copied from the file “features_info.txt”.</p>
+<p>The information in this section is copied from the file “features_info.txt”. This is part of the data in <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip</a>.</p>
 <p>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix ‘t’ to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.</p>
 <p>Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag).</p>
 <p>Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the ‘f’ to indicate frequency domain signals).</p>
